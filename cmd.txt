@@ -1,0 +1,9 @@
+hexo init 
+
+npm install hexo-deployer-git --save
+
+hexo  s
+
+hexo d -g
+
+hexo new post "tokenManager for smap"
