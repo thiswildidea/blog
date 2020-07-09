@@ -17,17 +17,17 @@ tags:
 ```js
 以上tokenManager 界面中 相关参数说明如下：
 
-地图Token 配置名称： 唯一配置名称，不允许重复，通过这个token 配置名称，获取平台token配置信息，调用时候后台会根据token 配置信息生成token.
+`地图Token 配置名称`： 唯一配置名称，不允许重复，通过这个token 配置名称，获取平台token配置信息，调用时候后台会根据token 配置信息生成token.
 
-用户名：平台授权的用户
+`用户名`：平台授权的用户
 
-密码：平台授权的用户的密码
+`密码`：平台授权的用户的密码
 
-token地址： 平台token获取地址
+`token地址`： 平台token获取地址
 
-token 类型： 主要分为三种类型，包括onemap、arcgis和portal，根据具体平台token 类型选择
+`token 类型`： 主要分为三种类型，包括onemap、arcgis和portal，根据具体平台token 类型选择
 
-token 标注：标注token信息，便于识别
+`token 标注`：标注token信息，便于识别
 ```
 ## 平台token调用示例
 ```js

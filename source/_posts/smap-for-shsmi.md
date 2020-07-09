@@ -12,7 +12,11 @@ tags:
 上海市测绘院地图API加载库,通过该API库实现上海测绘院地图数据加载显示(仅限上海市政务网可用)
 
 ## 注意事项
-由于smap-shsmi 属于新版本api,同时支持二三维一体化，目前功能还不完善，内容同步更新中。
+由于`smap-shsmi` 属于新版本api,同时支持二三维一体化，目前功能还不完善，内容同步更新中。
+
+
+##  示例代码
+[![Smap使用示例代码](https://gitee.com/thiswildidea/images/raw/master/others/github.jpg "Smap使用示例代码")](https://github.com/thiswildidea/SMap-shsmi-demo)
 
 ## 目录
 - [安装](#安装)
