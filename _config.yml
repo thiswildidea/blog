@@ -100,6 +100,9 @@ stylus:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: 'git'
-  repository: https://github.com/thiswildidea/thiswildidea.github.io.git
-  branch: master
+ - type: 'git'
+   repository: https://github.com/thiswildidea/thiswildidea.github.io.git
+   branch: master
+ - type: 'git'
+   repository: https://gitee.com/thiswildidea/thiswildidea.git
+   branch: master
