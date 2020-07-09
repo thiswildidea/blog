@@ -25,8 +25,8 @@ tags:
       - [创建二维地图](#创建二维地图)
       - [创建三维地图](#创建三维地图)
     - [地图样式](#地图样式)
-      - [地图样式-默认样式](#地图样式-默认样式)
       - [地图样式-暗色样式](#地图样式-暗色样式)
+      - [地图样式-亮色样式](#地图样式-亮色样式)
       - [地图样式-实景样式](#地图样式-实景样式)
     - [地图属性](#地图属性)
       - [地图缩放级别控制](#地图缩放级别zooms控制)
@@ -168,7 +168,7 @@ const map = new SMap.Map('container', {
   zoom: 5
 })
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE/%E5%9C%B0%E5%9B%BE%E5%88%9B%E5%BB%BA/mapcreate.png)
+![二维地图](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE/%E5%9C%B0%E5%9B%BE%E5%88%9B%E5%BB%BA/mapcreate.png)
 
 ##### [创建三维地图]
 ```js
@@ -180,36 +180,36 @@ const map = new SMap.Map('container', {
   pitch:60
 })
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE/%E5%9C%B0%E5%9B%BE%E5%88%9B%E5%BB%BA/mapcreate.png)
+![三维地图](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE/%E5%9C%B0%E5%9B%BE%E5%88%9B%E5%BB%BA/mapcreate.png)
 
 #### [地图样式]
-##### [地图样式-默认样式]
-```js
-const map = new SMap.Map('container', { 
-  viewMode: '2D',
-  center: [0, 0],
-  zoom: 4,
-  mapStyle: 'smap://styles/normal' //为赋值时候，默认为smap://styles/normal
-})
-```
-2D
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/lighttheme.png)
-3D
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/lighttheme.png)
-
 ##### [地图样式-暗色样式]
 ```js
 const map = new SMap.Map('container', { 
   viewMode: '2D',
   center: [0, 0],
   zoom: 4,
-  mapStyle: 'smap://styles/dark' 
+  mapStyle: 'smap://styles/dark' //未赋值时候，默认为smap://styles/dark
 })
 ```
 2D
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/darktheme.png)
+![二维暗色](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/darktheme.png)
 3D
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/darktheme.png)
+![三维暗色](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/darktheme.png)
+
+##### [地图样式-亮色样式]
+```js
+const map = new SMap.Map('container', { 
+  viewMode: '2D',
+  center: [0, 0],
+  zoom: 4,
+  mapStyle: 'smap://styles/light' 
+})
+```
+2D
+![二维亮色](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/lighttheme.png)
+3D
+![三维亮色](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/lighttheme.png)
 
 ##### [地图样式-实景样式]
 ```js
@@ -221,9 +221,9 @@ const map = new SMap.Map('container', {
 })
 ```
 2D
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/imagetheme.png)
+![二维影像](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/imagetheme.png)
 3D
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/imagestheme.png)
+![三维影像](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/imagestheme.png)
 
 #### [地图属性]
 ##### [地图缩放级别zooms控制]
@@ -252,9 +252,9 @@ const map = new SMap.Map('container', {
   showBuildingBlock: false, //三维地图可用,未赋值时候默认为true
 })
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%BB%BA%E7%AD%91%E7%89%A9%E6%A8%A1%E5%9E%8B/darkthemebuilding.png)
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%BB%BA%E7%AD%91%E7%89%A9%E6%A8%A1%E5%9E%8B/lightthemebuilding.png)
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%BB%BA%E7%AD%91%E7%89%A9%E6%A8%A1%E5%9E%8B/imagethemebuilding.png)
+![暗色建筑](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%BB%BA%E7%AD%91%E7%89%A9%E6%A8%A1%E5%9E%8B/darkthemebuilding.png)
+![亮色建筑](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%BB%BA%E7%AD%91%E7%89%A9%E6%A8%A1%E5%9E%8B/lightthemebuilding.png)
+![实景建筑]](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%BB%BA%E7%AD%91%E7%89%A9%E6%A8%A1%E5%9E%8B/imagethemebuilding.png)
 ##### [获取三维地图俯仰角]
 ```js
 const pitch= map.getPitch()
@@ -352,7 +352,7 @@ map.enableThroughGround(false)
 ```js
  <div id="container"  class="calcite-map  calcite-widgets-dark" />
 ```
-![Image text](https://raw.githubusercontent.com/thiswildidea/images/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/maptheme_dark.png)
+![暗色控件主题](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/maptheme_dark.png)
 
 ###### [自定义地图控件主题-亮色主题]
 ```js
@@ -360,7 +360,7 @@ map.enableThroughGround(false)
   
   注意：开发者可以自定义
 ```
-![Image text](https://raw.githubusercontent.com/thiswildidea/images/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/maptheme_light.png)
+![亮色控件主题](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E4%B8%BB%E9%A2%98/maptheme_light.png)
 
 #### [地图控件]
 ##### [地图控件-Home]
@@ -454,13 +454,13 @@ const bMapGalleryexpand = new SMap.BMapGalleryExpand({
 })
 map.addControl(bMapGalleryexpand)
 ```
-![Image text](https://raw.githubusercontent.com/thiswildidea/images/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E6%8E%A7%E4%BB%B6/mapcontrols.png)
+![二维地图控件](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E6%8E%A7%E4%BB%B6/mapcontrols.png)
 ##### [删除地图控件]
 ```js
 map.removeControl(layerListControl) //删除已经添加的layerListControl控件
 
 ```
-![Image text](https://raw.githubusercontent.com/thiswildidea/images/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E6%8E%A7%E4%BB%B6/mapcontrol.png)
+![三维地图控件](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E6%8E%A7%E4%BB%B6/mapcontrol.png)
 #### [地图覆盖物]
 ##### [添加点状覆盖物]
 ```js
@@ -1141,16 +1141,16 @@ map.updatefeature([markone, marktwo])
      此方法适合加载大量数据点
 ```
 二维10万个点展示
-![Image text](https://raw.githubusercontent.com/thiswildidea/images/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E8%A6%86%E7%9B%96%E7%89%A9/massMarks.png)
+![二维十万点](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E8%A6%86%E7%9B%96%E7%89%A9/massMarks.png)
 
 二维10万个点聚合展示
-![Image text](https://raw.githubusercontent.com/thiswildidea/images/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E8%A6%86%E7%9B%96%E7%89%A9/massMarkscluster.png)
+![二维十万点聚合](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%9C%B0%E5%9B%BE%E8%A6%86%E7%9B%96%E7%89%A9/massMarkscluster.png)
 
 三维10万个点展示
-![Image text](https://raw.githubusercontent.com/thiswildidea/images/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E8%A6%86%E7%9B%96%E7%89%A9/massMarkers.png)
+![三维十万点](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E8%A6%86%E7%9B%96%E7%89%A9/massMarkers.png)
 
 三维10万个优化显示
-![Image text](https://raw.githubusercontent.com/thiswildidea/images/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E8%A6%86%E7%9B%96%E7%89%A9/massMarkersSelection.png)
+![三维十万点聚合](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%9C%B0%E5%9B%BE%E8%A6%86%E7%9B%96%E7%89%A9/massMarkersSelection.png)
 
 ##### [更新点状覆盖物组updatefeature]  
 ```js
@@ -1303,10 +1303,5 @@ map.on(SMap.MapEvent.resize, function(view,eventParamter) {
      
   })
 ```
-## 技术支持
-                               QQ号: 314984468 
-![Image text](https://raw.githubusercontent.com/thiswildidea/images/master/contact/qq.jpg)
 
-                               微信号：ioioya 
-![Image text](https://raw.githubusercontent.com/thiswildidea/images/master/contact/webchat.jpg)
 

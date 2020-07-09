@@ -13,7 +13,7 @@ tags:
 - [平台token管理器](#平台token管理器)
 - [平台token调用方式](#平台token调用方式)
 ## 平台token管理器
-![Image text](https://gitee.com/thiswildidea/images/raw/master/token/tokenManagerUrl.png)
+![平台token管理器界面](https://gitee.com/thiswildidea/images/raw/master/token/tokenManagerUrl.png)
 ```js
 以上tokenManager 界面中 相关参数说明如下：
 

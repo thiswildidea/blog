@@ -54,7 +54,7 @@ import SMap from 'smap-shsmi'
   }
   map.setmaskboundary(lightringParamter)
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%85%89%E5%9C%88/%E5%8C%BA%E5%8E%BF%E5%85%89%E5%9C%88.png)
+![二维区县光圈](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%85%89%E5%9C%88/%E5%8C%BA%E5%8E%BF%E5%85%89%E5%9C%88.png)
 ## 二维街道光圈
 ```js
   const lightringParamter = {
@@ -67,7 +67,7 @@ import SMap from 'smap-shsmi'
   }
   map.setmaskboundary(lightringParamter)
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%85%89%E5%9C%88/%E8%A1%97%E9%81%93%E5%85%89%E5%9C%88.png)
+![二维街道光圈](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%85%89%E5%9C%88/%E8%A1%97%E9%81%93%E5%85%89%E5%9C%88.png)
 ## 二维居委会光圈
 ```js
   const lightringParamter = {
@@ -80,7 +80,7 @@ import SMap from 'smap-shsmi'
   }
   map.setmaskboundary(lightringParamter)
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%85%89%E5%9C%88/%E5%B1%85%E5%A7%94%E4%BC%9A%E5%85%89%E5%9C%88.png)
+![二维居委会光圈](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%85%89%E5%9C%88/%E5%B1%85%E5%A7%94%E4%BC%9A%E5%85%89%E5%9C%88.png)
 ## 二维自定义范围光圈
 ```js
   const lightringParamter = {
@@ -92,7 +92,7 @@ import SMap from 'smap-shsmi'
   }
   map.setmaskboundary(lightringParamter)
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%85%89%E5%9C%88/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%89%E5%9C%88.png)
+![二维自定义范围光圈](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E5%85%89%E5%9C%88/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%89%E5%9C%88.png)
 ## 三维区县光圈
 ```js
 import SMap from 'smap-shsmi'
@@ -118,7 +118,7 @@ import SMap from 'smap-shsmi'
   }
   map.setmaskboundary(lightringParamter)
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E5%8C%BA%E5%8E%BF%E5%85%89%E5%9C%88.png)
+![三维区县光圈](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E5%8C%BA%E5%8E%BF%E5%85%89%E5%9C%88.png)
 ## 三维街道光圈
 ```js
   const lightringParamter = {
@@ -134,7 +134,7 @@ import SMap from 'smap-shsmi'
   }
   map.setmaskboundary(lightringParamter)
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E8%A1%97%E9%81%93%E5%85%89%E5%9C%88.png)
+![三维街道光圈](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E8%A1%97%E9%81%93%E5%85%89%E5%9C%88.png)
 ## 三维居委会光圈
 ```js
   const lightringParamter = {
@@ -150,7 +150,7 @@ import SMap from 'smap-shsmi'
   }
   map.setmaskboundary(lightringParamter)
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E5%B1%85%E5%A7%94%E4%BC%9A%E5%85%89%E5%9C%88.png)
+![三维居委会光圈](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E5%B1%85%E5%A7%94%E4%BC%9A%E5%85%89%E5%9C%88.png)
 ## 三维自定义范围光圈
 ```js
   const lightringParamter = {
@@ -165,7 +165,7 @@ import SMap from 'smap-shsmi'
   }
   map.setmaskboundary(lightringParamter)
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8C%83%E5%9B%B4%E5%85%89%E5%9C%88.png)
+![三维自定义范围光圈](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8C%83%E5%9B%B4%E5%85%89%E5%9C%88.png)
 ## 三维自定义光圈高度
 ```js
   const lightringParamter = {
@@ -180,7 +180,7 @@ import SMap from 'smap-shsmi'
   }
   map.setmaskboundary(lightringParamter)
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E5%85%89%E5%9C%88%E9%AB%98%E5%BA%A6.png)
+![三维自定义光圈高度](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E5%85%89%E5%9C%88%E9%AB%98%E5%BA%A6.png)
 ## 自定光圈宽度
 ```js
   const lightringParamter = {
@@ -196,7 +196,7 @@ import SMap from 'smap-shsmi'
   }
   map.setmaskboundary(lightringParamter)
 ```
-![Image text](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E5%85%89%E5%9C%88%E5%AE%BD%E5%BA%A6.png)
+![自定光圈宽度](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E5%85%89%E5%9C%88/%E5%85%89%E5%9C%88%E5%AE%BD%E5%BA%A6.png)
 ## 自定义光圈和遮盖层颜色
 ```js
   const lightringParamter = {
