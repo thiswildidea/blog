@@ -25,7 +25,7 @@ tags:
 
 
 ##  SOE开发示例代码
-[![SOE示例代码](https://gitee.com/thiswildidea/images/raw/master/SOE/soe.png "GitHub-SOE开发示例代码")](https://github.com/thiswildidea/soe_sample.git)
+[![GitHub-SOE开发示例代码](https://gitee.com/thiswildidea/images/raw/master/SOE/soe.png "GitHub-SOE开发示例代码")](https://github.com/thiswildidea/soe_sample.git)
 
 ## SOE扩展服务页面测试
 ![页面调试](https://gitee.com/thiswildidea/images/raw/master/SOE/htmlrequest.png)
