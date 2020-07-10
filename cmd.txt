@@ -6,4 +6,4 @@ hexo  s
 
 hexo d -g
 
-hexo new post "tokenManager for smap"
+hexo new post "location information extraction for smap boundary"
