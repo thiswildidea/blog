@@ -6,4 +6,4 @@ hexo  s
 
 hexo d -g
 
-hexo new post "location information extraction for smap boundary"
+hexo new post "ArcGIS Enterprise install for linux"

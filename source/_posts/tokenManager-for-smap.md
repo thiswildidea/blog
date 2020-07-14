@@ -11,6 +11,7 @@ tags:
 上海市测绘院公共服务平台、ArcGIS、Portal 统一token 管理器
 ## 目录
 - [平台token管理器](#平台token管理器)
+- [SMap中tokenconfigname配置](#SMap中tokenconfigname配置)
 - [平台token调用方式](#平台token调用方式)
 ## 平台token管理器
 ![平台token管理器界面](https://gitee.com/thiswildidea/images/raw/master/token/tokenManagerUrl.png)
@@ -28,6 +29,19 @@ tags:
 `token 类型`： 主要分为三种类型，包括onemap、arcgis和portal，根据具体平台token 类型选择
 
 `token 标注`：标注token信息，便于识别
+```
+## SMap中tokenconfigname配置
+```js
+配置上步骤中`地图Token 配置名称`，通过该配置获取token信息
+ const map = new SMap.Map('container', {
+        tokenconfigname: 'smiapi_new', 
+        viewMode: '3D',
+        center: [0, 0],
+        zoom: 4,
+        zooms: [1, 12],
+        pitch: 60,
+        mapStyle: 'smap://styles/dark'
+      })
 ```
 ## 平台token调用示例
 ```js
