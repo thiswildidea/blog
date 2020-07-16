@@ -7,3 +7,4 @@ hexo  s
 hexo d -g
 
 hexo new post "ArcGIS Enterprise install for linux"
+hexo new post "trajectory  playback  in  smap-plugins-shsmi"
