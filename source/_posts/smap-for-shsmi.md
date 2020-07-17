@@ -2,7 +2,7 @@
 layout: pos
 title: smap for shsmi
 date: 2020-07-08 14:35:32
-top: true
+top: 1000
 categories:
 - smap-shsmi
 tags:

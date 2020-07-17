@@ -8,3 +8,5 @@ hexo d -g
 
 hexo new post "ArcGIS Enterprise install for linux"
 hexo new post "trajectory  playback  in  smap-plugins-shsmi"
+hexo new post "MigrationMap  in  smap-plugins-shsmi"
+hexo new post "smap-plugins-shsmi"
