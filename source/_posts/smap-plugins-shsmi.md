@@ -20,10 +20,12 @@ tags:
    - [轨迹播放调用示例](#轨迹播放调用示例)
       - [三维轨迹播放](#三维轨迹播放)
       - [二维轨迹播放](#二维轨迹播放)
+      - [清除轨迹播放](#清除轨迹播放)
    - [轨迹播放参数说明](#参数说明)
 - [迁徙图](#迁徙图)
    - [迁徙图调用示例](#迁徙图调用示例)
    - [迁徙图参数说明](#参数说明)
+   - [移除迁徙图](#移除迁徙图)
 
 ## 轨迹播放
 ### 轨迹播放调用示例
@@ -230,6 +232,10 @@ import Plugins from 'smap-plugins-shsmi' // 引用Plugins
 ![二维轨迹播放](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E8%BD%A8%E8%BF%B9%E6%92%AD%E6%94%BE/trajectoryplayback.png)
 ![二维轨迹播放](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E8%BD%A8%E8%BF%B9%E6%92%AD%E6%94%BE/trajectoryplayback1.png)
 ![二维轨迹播放](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E8%BD%A8%E8%BF%B9%E6%92%AD%E6%94%BE/trajectoryplayback.gif)
+#### 清除轨迹播放
+```js
+trajectory.remove()
+```
 ### 轨迹播放参数说明
 ```js
 coords：轨迹坐标（上海坐标系统）
@@ -479,6 +485,10 @@ const XHData = [
 ![三维迁徙图](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/%E8%BF%81%E7%A7%BB%E5%9B%BE/MigrationMap.gif)
 ![二维迁徙图](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E8%BF%81%E7%A7%BB%E5%9B%BE/MigrationMap.png)
 ![二维迁徙图](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/%E8%BF%81%E7%A7%BB%E5%9B%BE/MigrationMap.gif)
+#### 移除迁徙图
+```js
+ migrationMap.remove('echart')
+```
 ### 迁徙图参数说明
 ```js
   id:  //迁移图id 对应对应cavasid
