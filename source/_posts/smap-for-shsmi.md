@@ -359,7 +359,7 @@ map.enableThroughGround(false)
 ```
 ##### [移除地图缩放范围限制]
 ```js
-map.removeExtentConstrain(false)
+map.removeExtentConstrain()
 ```
 #### [自定义地图控件主题]
 ##### [自定义地图控件主题-暗色主题]
