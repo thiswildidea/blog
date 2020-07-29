@@ -89,7 +89,7 @@ import Plugins from 'smap-plugins-shsmi' // 引用Plugins
           y: -355.09700
         }
       ]
-      const trajectory = new Plugins.Trajectory(map.map)
+      const trajectory = new Plugins.Trajectory(map.view)
       trajectory.playback({
         coords: routedata,
         showtrail: true,
@@ -198,7 +198,7 @@ import Plugins from 'smap-plugins-shsmi' // 引用Plugins
           y: -355.09700
         }
       ]
-      const trajectory = new Plugins.Trajectory(map.map)
+      const trajectory = new Plugins.Trajectory(map.view)
       trajectory.playback({
         coords: routedata,
         showtrail: true,

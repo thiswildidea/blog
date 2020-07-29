@@ -30,7 +30,7 @@ import Plugins from 'smap-plugins-shsmi' // 引用Plugins
       })
 ```
 ```js
- const migrationMap = new Plugins.MigrationMap(map.map)
+ const migrationMap = new Plugins.MigrationMap(map.view)
  const geoCoordMap = {
         '浦东区': [21704.88, -10564.32],
         '奉贤区': [6530.67, -36110.78],
