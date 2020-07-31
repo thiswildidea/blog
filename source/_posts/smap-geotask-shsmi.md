@@ -19,9 +19,15 @@ tags:
 - [图层查询](#图层查询)
    - [featureLayer](#featureLayer)
       - [图层查询(featureLayer)调用](#图层查询(featureLayer)调用)
+      - [(featureLayer)查询结果地图地图移除](#(featureLayer)查询结果地图地图移除)
+      - [(featureLayer)查询结果地图地图隐藏](#(featureLayer)查询结果地图地图隐藏)
+      - [(featureLayer)查询结果地图地图显示](#(featureLayer)查询结果地图地图显示)
       - [图层查询(featureLayer)参数说明](#图层查询(featureLayer)参数说明)
    - [mapImageLayer](#mapImageLayer)
       - [图层查询(mapImageLayer调用)](#图层查询(mapImageLayer)调用)
+      - [(mapImageLayer)查询结果地图地图移除](#(featureLayer)查询结果地图地图移除)
+      - [(mapImageLayer)查询结果地图地图隐藏](#(featureLayer)查询结果地图地图隐藏)
+      - [(mapImageLayer)查询结果地图地图显示](#(mapImageLayer)查询结果地图地图显示)
       - [图层查询(mapImageLayer)参数说明](#图层查询(mapImageLayer)参数说明)
 ## 图层查询
 ### featureLayer
@@ -55,10 +61,22 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
         }
       }
     }
-    const  queryTask = new GeoTask.Query(this.map.view)
-    const queryTask.featurelayer(param).then((result) => {
+    const  flayerqueryTask = new GeoTask.Query(this.map.view)
+    const flayerqueryTask.featurelayer(param).then((result) => {
         console.log(result)
   })
+```
+#### (featureLayer)查询结果地图地图移除
+```js
+flayerqueryTask.remove() //移除已查询绘制在地图上的显示结果
+```
+#### (featureLayer)查询结果地图地图隐藏
+```js
+flayerqueryTask.hide()  //隐藏已查询绘制在地图上的显示结果
+```
+#### (featureLayer)查询结果地图地图显示
+```js
+flayerqueryTask.show() //显示已查询绘制在地图上的显示结果
 ```
 #### 图层查询(featurelayer)参数说明
 ```js
@@ -88,7 +106,7 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
 ```js
   const param = {
       layerUniqueId: 'qx_boundary',         //要查的图层ID 若地图没有加载该图层可以根据queryUrl 传入可访问查询图层ur
-      layerId: 0,                           //服务图层id
+      layerId：0，                          //服务图层中要被查的id
       queryDefinition: "name like '%黄浦%'", // qxcode like '%01%    //查询条件类似sql语句
       displayed: false,                    //查询结果是否在地图上显示
       outFields: ['*'],                   //要返回的属性字段，*为所有字段，可按实际图层字段定义
@@ -102,10 +120,22 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
         }
       }
     }
-    const  queryTask = new GeoTask.Query(this.map.view)
-    const queryTask.mapImageLayer(param).then((result) => {
+    const  mlayerqueryTask = new GeoTask.Query(this.map.view)
+    const mlayerqueryTask.mapImageLayer(param).then((result) => {
         console.log(result)
   })
+```
+#### (mapImageLayer)查询结果地图地图移除
+```js
+mlayerqueryTask.remove()  //移除已查询绘制在地图上的显示结果
+```
+#### (mapImageLayer)查询结果地图地图隐藏
+```js
+mlayerqueryTask.hide()  //隐藏已查询绘制在地图上的显示结果
+```
+#### (mapImageLayer)查询结果地图地图显示
+```js
+mlayerqueryTask.show()  //显示已查询绘制在地图上的显示结果
 ```
 #### 图层查询(mapImageLayer)参数说明
 ```js
