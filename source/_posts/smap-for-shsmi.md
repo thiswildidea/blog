@@ -1228,7 +1228,7 @@ map.on(SMap.MapEvent.blur, function(view,eventParamter) {
 ##### [地图单击事件]
 ```js
 map.on(SMap.MapEvent.click, function(view,eventParamter) {
-      maview.hitTest(eventParamter).then(async function(response) {
+      view.hitTest(eventParamter).then(async function(response) {
           console.log(response)
         })
   })
