@@ -20,9 +20,9 @@ tags:
    - [featureLayer](#featureLayer)
       - [图层查询(featureLayer)调用](#图层查询(featureLayer)调用)
       - [图层查询(featureLayer)参数说明](#图层查询(featureLayer)参数说明)
-    - [mapImageLayer](#mapImageLayer)
-       - [图层查询(mapImageLayer调用)](#图层查询(mapImageLayer)调用)
-       - [图层查询(mapImageLayer)参数说明](#图层查询(mapImageLayer)参数说明)
+   - [mapImageLayer](#mapImageLayer)
+      - [图层查询(mapImageLayer调用)](#图层查询(mapImageLayer)调用)
+      - [图层查询(mapImageLayer)参数说明](#图层查询(mapImageLayer)参数说明)
 ## 图层查询
 ### featureLayer
 #### 图层查询(featurelayer)调用
@@ -88,6 +88,7 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
 ```js
   const param = {
       layerUniqueId: 'qx_boundary',         //要查的图层ID 若地图没有加载该图层可以根据queryUrl 传入可访问查询图层ur
+      layerId: 0,                           //服务图层id
       queryDefinition: "name like '%黄浦%'", // qxcode like '%01%    //查询条件类似sql语句
       displayed: false,                    //查询结果是否在地图上显示
       outFields: ['*'],                   //要返回的属性字段，*为所有字段，可按实际图层字段定义
@@ -102,7 +103,7 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
       }
     }
     const  queryTask = new GeoTask.Query(this.map.view)
-    const queryTask.featurelayer(param).then((result) => {
+    const queryTask.mapImageLayer(param).then((result) => {
         console.log(result)
   })
 ```
