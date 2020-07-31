@@ -18,14 +18,14 @@ tags:
 ## 目录
 - [图层查询](#图层查询)
    - [featureLayer](#featureLayer)
-      - [图层查询(featureLayer)](#图层查询(featureLayer))
+      - [图层查询(featureLayer)调用](#图层查询(featureLayer)调用)
       - [图层查询(featureLayer)参数说明](#图层查询(featureLayer)参数说明)
     - [mapImageLayer](#mapImageLayer)
-       - [图层查询(mapImageLayer)](#图层查询(mapImageLayer))
+       - [图层查询(mapImageLayer调用)](#图层查询(mapImageLayer)调用)
        - [图层查询(mapImageLayer)参数说明](#图层查询(mapImageLayer)参数说明)
 ## 图层查询
 ### featureLayer
-#### 图层查询(featurelayer)
+#### 图层查询(featurelayer)调用
 ```js
 import SMap from 'smap-shsmi' // 引用SMAP
 import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
@@ -71,7 +71,7 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
  queryUrl       //查询的图层url地址，如果图层加载到地图中，传入图层layerUniqueId 即可，若地图没有加载该图层到地图，可传入该图层服务Url地址
 ```
 ### mapImageLayer
-#### 图层查询(mapImageLayer)
+#### 图层查询(mapImageLayer)调用
 ```js
 import SMap from 'smap-shsmi' // 引用SMAP
 import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
