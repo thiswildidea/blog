@@ -23,7 +23,7 @@ tags:
 - [自定义光圈和遮盖层颜色](#自定义光圈和遮盖层颜色)
 ## 调用参数说明
 ```js
-    boundaryType: 'qx',  // 光圈类型，目前支持上海市区县（qx）、街道(jd)、居委会(jwh)三个层次范围光圈
+    boundaryType: 'qx_boundary',  // 光圈类型，目前支持上海市区县（qx）、街道(jd)、居委会(jwh)三个层次范围光圈
     boundaryDefinition: "name like '%黄浦%'", // 查询条件定义，支持按类型名称或者按照对应区县、街道、居委会编码查询，区县编码：qxcode like '%01% 。街道编码：jd_code like '%3509%。 居委会编码：jwhcode like '%072128%'
     boundarydistance: 150, //光圈宽度（单位米）
     bounarycount: 5, //光圈渐变个数
@@ -32,6 +32,9 @@ tags:
     maskColor: [0, 17, 33, 0.9], //遮罩层颜色
     symbol: { size: 20 }  //光圈高度，仅三维中支持
 ```
+[![区县数据](https://gitee.com/thiswildidea/images/raw/master/others/Datatable.png "区县数据")](https://gitee.com/thiswildidea/images/blob/master/resouces/boundary/qx_boundary.xlsx)
+[![街道数据](https://gitee.com/thiswildidea/images/raw/master/others/Datatable.png "街道数据")](https://gitee.com/thiswildidea/images/blob/master/resouces/boundary/jwh_boundary.xlsx)
+[![居委会数据](https://gitee.com/thiswildidea/images/raw/master/others/Datatable.png "居委会数据")](https://gitee.com/thiswildidea/images/blob/master/resouces/boundary/qx_boundary.xlsx)
 ## 二维区县光圈
 ```js
 import SMap from 'smap-shsmi'
@@ -45,7 +48,7 @@ import SMap from 'smap-shsmi'
 ```
 ```js
   const lightringParamter = {
-    boundaryType: 'qx',
+    boundaryType: 'qx_boundary',
     boundaryDefinition: "name like '%黄浦%'", // qxcode like '%01%
     boundarydistance: 150,
     bounarycount: 5,
@@ -58,7 +61,7 @@ import SMap from 'smap-shsmi'
 ## 二维街道光圈
 ```js
   const lightringParamter = {
-    boundaryType: 'jd',
+    boundaryType: 'jd_boundary',
     boundaryDefinition: "name like '%上钢新村街道%'", // jd_code  like '%3509%
     boundarydistance: 150,
     bounarycount: 5,
@@ -71,7 +74,7 @@ import SMap from 'smap-shsmi'
 ## 二维居委会光圈
 ```js
   const lightringParamter = {
-    boundaryType: 'jwh',
+    boundaryType: 'jwh_boundary',
     boundaryDefinition: "jwhcode like '%072128%'", // name like '%曹杨新苑%
     boundarydistance: 150,
     bounarycount: 5,
@@ -106,7 +109,7 @@ import SMap from 'smap-shsmi'
 ```
 ```js
   const lightringParamter = {
-    boundaryType: 'qx',
+    boundaryType: 'qx_boundary',
     boundaryDefinition: "name like '%黄浦%'", // qxcode like '%01%
     boundarydistance: 150,
     bounarycount: 5,
@@ -122,7 +125,7 @@ import SMap from 'smap-shsmi'
 ## 三维街道光圈
 ```js
   const lightringParamter = {
-    boundaryType: 'jd',
+    boundaryType: 'jd_boundary',
     boundaryDefinition: "name like '%上钢新村街道%'", // jd_code  like '%3509%
     boundarydistance: 150,
     bounarycount: 5,
@@ -138,7 +141,7 @@ import SMap from 'smap-shsmi'
 ## 三维居委会光圈
 ```js
   const lightringParamter = {
-    boundaryType: 'jwh',
+    boundaryType: 'jwh_boundary',
     boundaryDefinition: "name like '%曹杨新苑%' ",  // "jwhcode like '%072128%'"
     boundarydistance: 150,
     bounarycount: 5,
@@ -184,7 +187,7 @@ import SMap from 'smap-shsmi'
 ## 自定光圈宽度
 ```js
   const lightringParamter = {
-    boundaryType: 'jwh',
+    boundaryType: 'jwh_boundary',
     boundaryDefinition: "name like '%曹杨新苑%' ",  // "jwhcode like '%072128%'"
     boundarydistance: 550,
     bounarycount: 5,
