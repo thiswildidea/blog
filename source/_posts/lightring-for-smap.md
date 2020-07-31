@@ -32,9 +32,9 @@ tags:
     maskColor: [0, 17, 33, 0.9], //遮罩层颜色
     symbol: { size: 20 }  //光圈高度，仅三维中支持
 ```
-[![区县数据](https://gitee.com/thiswildidea/images/raw/master/others/Datatable.png "区县数据")](https://gitee.com/thiswildidea/images/blob/master/resouces/boundary/qx_boundary.xlsx)
-[![街道数据](https://gitee.com/thiswildidea/images/raw/master/others/Datatable.png "街道数据")](https://gitee.com/thiswildidea/images/blob/master/resouces/boundary/jwh_boundary.xlsx)
-[![居委会数据](https://gitee.com/thiswildidea/images/raw/master/others/Datatable.png "居委会数据")](https://gitee.com/thiswildidea/images/blob/master/resouces/boundary/qx_boundary.xlsx)
+[![区县属性数据](https://gitee.com/thiswildidea/images/raw/master/others/Datatable.png "区县属性数据")](https://gitee.com/thiswildidea/images/blob/master/resouces/boundary/qx_boundary.xlsx)
+[![街道属性数据](https://gitee.com/thiswildidea/images/raw/master/others/Datatable.png "街道属性数据")](https://gitee.com/thiswildidea/images/blob/master/resouces/boundary/jd_boundary.xlsx)
+[![居委会属性数据](https://gitee.com/thiswildidea/images/raw/master/others/Datatable.png "居委会属性数据")](https://gitee.com/thiswildidea/images/blob/master/resouces/boundary/jwh_boundary.xlsx)
 ## 二维区县光圈
 ```js
 import SMap from 'smap-shsmi'
