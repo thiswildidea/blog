@@ -17,12 +17,15 @@ tags:
 
 ## 目录
 - [图层查询](#图层查询)
-   - [图层查询(featureLayer)](#图层查询(featureLayer))
-   - [图层查询(featureLayer)参数说明](#图层查询(featureLayer)参数说明)
-   - [图层查询(mapImageLayer)](#图层查询(mapImageLayer))
-   - [图层查询(mapImageLayer)参数说明](#图层查询(mapImageLayer)参数说明)
+   - [featureLayer](#featureLayer)
+      - [图层查询(featureLayer)](#图层查询(featureLayer))
+      - [图层查询(featureLayer)参数说明](#图层查询(featureLayer)参数说明)
+    - [mapImageLayer](#mapImageLayer)
+       - [图层查询(mapImageLayer)](#图层查询(mapImageLayer))
+       - [图层查询(mapImageLayer)参数说明](#图层查询(mapImageLayer)参数说明)
 ## 图层查询
-### 图层查询(featurelayer)
+### featureLayer
+#### 图层查询(featurelayer)
 ```js
 import SMap from 'smap-shsmi' // 引用SMAP
 import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
@@ -57,7 +60,7 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
         console.log(result)
   })
 ```
-### 图层查询(featurelayer)参数说明
+#### 图层查询(featurelayer)参数说明
 ```js
  layerUniqueId        //要查的图层ID 若地图没有加载该图层可以根据queryUrl 传入可访问查询图层ur
  type                 //查询要素类型 分 polygon、polyline、point 三种类型
@@ -67,7 +70,8 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
  outFields       // 要返回的属性字段，*为所有字段，可按实际图层字段定义
  queryUrl       //查询的图层url地址，如果图层加载到地图中，传入图层layerUniqueId 即可，若地图没有加载该图层到地图，可传入该图层服务Url地址
 ```
-### 图层查询(mapImageLayer)
+### mapImageLayer
+#### 图层查询(mapImageLayer)
 ```js
 import SMap from 'smap-shsmi' // 引用SMAP
 import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
@@ -102,13 +106,13 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
         console.log(result)
   })
 ```
-### 图层查询(mapImageLayer)参数说明
+#### 图层查询(mapImageLayer)参数说明
 ```js
  layerUniqueId           //要查的图层ID 若地图没有加载该图层可以根据queryUrl 传入可访问查询图层ur
  layerId                //要查的图层类型为MapImageLayer的子图层id
  type                  //查询要素类型 分 polygon、polyline、point 三种类型
  queryDefinition      //查询条件类似sql语句
- displayed           //询结果是否在地图上显示
+ displayed           //查询结果是否在地图上显示
  symbol             //地图上显示的渲染符号，可根据type类型，设置polygon、polyline、point 三种类型样式及扩展类型样式
  outFields       // 要返回的属性字段，*为所有字段都返回，可按实际图层字段定义
  queryUrl        //查询的图层url 地址，如果图层加载到地图中，传入layerUniqueId 即可，若地图没有加载该图层到地图，可传入该图层服务Url地址
