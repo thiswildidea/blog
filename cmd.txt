@@ -14,3 +14,5 @@ hexo new post "smap-geotask-shsmi"
 hexo new post "layerconfig for smap"
 
 hexo new post "light ring for smap new"
+
+hexo new post "heatmap for smap"
