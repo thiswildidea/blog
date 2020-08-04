@@ -16,3 +16,5 @@ hexo new post "layerconfig for smap"
 hexo new post "light ring for smap new"
 
 hexo new post "heatmap for smap"
+
+hexo new post "falsh3d for smap"
