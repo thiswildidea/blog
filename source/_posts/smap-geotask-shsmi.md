@@ -29,6 +29,12 @@ tags:
       - [(mapImageLayer)查询结果地图地图隐藏](#(featureLayer)查询结果地图地图隐藏)
       - [(mapImageLayer)查询结果地图地图显示](#(mapImageLayer)查询结果地图地图显示)
       - [图层查询(mapImageLayer)参数说明](#图层查询(mapImageLayer)参数说明)
+   - [identify](#identify)
+      - [图层identify调用](#图层查询identify调用)
+      - [图层identify调用结果地图隐藏](#图层identify调用结果地图隐藏)
+      - [图层identify调用结果地图显示](#图层identify调用结果地图显示)
+      - [图层identify调用结果地图移除](#图层identify调用结果地图移除)
+      - [图层identify调用参数说明](#图层identify调用参数说明)
 ## 图层查询
 ### featureLayer
 #### 图层查询(featurelayer)调用
@@ -147,4 +153,64 @@ mlayerqueryTask.show()  //显示已查询绘制在地图上的显示结果
  symbol             //地图上显示的渲染符号，可根据type类型，设置polygon、polyline、point 三种类型样式及扩展类型样式
  outFields       // 要返回的属性字段，*为所有字段都返回，可按实际图层字段定义
  queryUrl        //查询的图层url 地址，如果图层加载到地图中，传入layerUniqueId 即可，若地图没有加载该图层到地图，可传入该图层服务Url地址
+```
+### identify
+#### 图层查询identify调用
+```js
+import SMap from 'smap-shsmi' // 引用SMAP
+import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
+ const map = new SMap.Map('container', {
+        viewMode: '3D',
+        center: [0, 0],
+        zoom: 4,
+        zooms: [0, 12],
+        pitch: 60,
+        mapStyle: 'smap://styles/dark',
+        showBuildingBlock: true
+      })
+    let identifytask=null
+      smap.on(SMap.MapEvent.maploaded, function(view, eventParamter) {
+         identifytask = new GeoTask.Identify(smap.view)
+         identifytask.on('click', function(result, geometry) {  // identify结果地图点击显示
+            console.log(result,geometry)  
+         })
+    })
+```
+```js
+//点击地图查询指定图层内容
+ smap.on(SMap.MapEvent.click, function(view, eventParamter) {
+     const param = {
+         url:"http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
+         displayed: true, //查询接口是否在地图上显示
+         layerIds:[0],
+         type: 'polygon',
+         tolerance:1,
+         geometry:eventParamter.mapPoint
+     }
+     identifytask.MapService(param).then((result) => {
+       console.log(result)
+     })
+ })
+```
+#### 图层identify调用结果地图隐藏
+```js
+identifytask.hide()
+```
+#### 图层identify调用结果地图显示
+```js
+identifytask.show()
+```
+#### 图层identify调用结果地图移除
+```js
+identifytask.remove()
+```
+#### 图层identify调用参数说明
+```js
+  layerUniqueId   // 服务id,当服务已经加载到地图了，使用id
+  url         // 服务url,当地图没有加载到地图中，使用要identify的url
+  layerIds   // 服务子图层id, 指定layerIds，identify智慧识别对应图层信息
+  geometry   //点击位置
+  symbol     //点击识别结果地图高亮显示符号
+  displayed  //点击识别内容是否在地图上显示
+  tolerance  // 容差，值越大越容易识别
 ```
