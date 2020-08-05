@@ -3,8 +3,8 @@ hexo init
 npm install hexo-deployer-git --save
 
 hexo  s
-
 hexo d -g
+
 
 hexo new post "ArcGIS Enterprise install for linux"
 hexo new post "trajectory  playback  in  smap-plugins-shsmi"
@@ -12,9 +12,7 @@ hexo new post "MigrationMap  in  smap-plugins-shsmi"
 hexo new post "smap-plugins-shsmi"
 hexo new post "smap-geotask-shsmi"
 hexo new post "layerconfig for smap"
-
 hexo new post "light ring for smap new"
-
 hexo new post "heatmap for smap"
 
 hexo new post "falsh3d for smap"

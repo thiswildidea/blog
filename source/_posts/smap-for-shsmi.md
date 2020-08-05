@@ -57,6 +57,9 @@ tags:
       - [恢复地表模式](#恢复地表模式)
       - [添加地图缩放范围限制](#添加地图缩放范围限制)
       - [移除地图缩放范围限制](#移除地图缩放范围限制)
+    - [添加图层](#添加图层)
+       - [根据服务url添加图层](#根据服务url添加图层)
+       - [根据图层id删除图层](#根据图层id删除图层)
     - [自定义地图控件主题](#自定义地图控件主题)
        - [自定义地图控件主题-暗色主题](#自定义地图控件主题-暗色主题)
        - [自定义地图控件主题-亮色主题](#自定义地图控件主题-亮色主题)
@@ -152,9 +155,8 @@ import SMap from 'smap-shsmi'
 ```
 ### [以普通JS方式使用]
 ```js
- <script type="module">
-        import SMap from '../esm/SMap.js'
-        const smap = new SMap.Map('mapcontainer', {
+  <script src="http://10.108.3.16/smiapi/smap/SMap.min.js"/>
+        const map = new SMap.Map('mapcontainer', {
            viewMode: '2D',
            center: [0, 0],
            zoom: 5,
@@ -360,6 +362,48 @@ map.enableThroughGround(false)
 ##### [移除地图缩放范围限制]
 ```js
 map.removeExtentConstrain()
+```
+#### [添加图层]
+##### [根据服务url添加图层]
+```js
+layerType         // 图层类型 MapImageLayer SceneLayer FeatureLayer TileLayer GraphicsLayer  SHCTiledMapServiceLayer
+layerUrl          // 服务URl
+isToken           // 服务isToken
+layerTitle        // 服务title
+layerLayerId      // 服务LayerId
+layerOpacity      // 服务opacity
+layerVisible      // 服务visible
+layerLabelsVisible // 服务labelsVisible 支持FeatureLayer
+layerLabelingInfo // 服务labelingInfo 支持FeatureLayer
+layerMaxScale     // 服务maxScale
+layerMinScale    // 服务minScale
+layerelevationInfo // elevationInfo  支持FeatureLayer SceneLayer GraphicsLayer
+layerPopupEnabled // 服务popupEnabled 支持FeatureLayer SceneLayer GraphicsLayer
+layerPopupTemplate// 服务popupTemplate 支持FeatureLayer SceneLayer GraphicsLayer
+layerRenderer     // 服务renderer
+layerSublayers   // sublayers  支持支持MapImageLayer 
+```
+```js
+const SceneLayerparam = {
+              layerType: 'SceneLayer',
+              layerUrl: "http://10.201.37.220/server/rest/services/Hosted/LBJZ_ORIGIN/SceneServer",
+              layerTitle: "历保建筑原貌",
+              layerLayerId: "LBJZ_ORIGIN",
+              layerOpacity:1,
+              layerVisible:true,
+              layerMaxScale:1000,
+              layerMinScale:10000000,
+              layerPopupEnabled:true,
+              elevationInfo: {
+                             mode: 'absolute-height',
+                            offset: -2.5
+                    }
+             }
+this.map.addLayer(SceneLayerparam)
+```
+##### [根据图层id删除图层]
+```js
+smap.removeLayer('LBJZ_ORIGIN')
 ```
 #### [自定义地图控件主题]
 ##### [自定义地图控件主题-暗色主题]
