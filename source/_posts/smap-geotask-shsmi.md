@@ -199,7 +199,6 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
          url:"http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
          displayed: true, //查询接口是否在地图上显示
          layerIds:[0],
-         type: 'polygon',
          tolerance:1,
          geometry:eventParamter.mapPoint
      }
@@ -226,7 +225,6 @@ identifytask.remove()
   url         // 服务url,当地图没有加载到地图中，使用要identify的url
   layerIds   // 服务子图层id, 指定layerIds，identify智慧识别对应图层信息
   geometry   //点击位置
-  symbol     //点击识别结果地图高亮显示符号
   displayed  //点击识别内容是否在地图上显示
   tolerance  // 容差，值越大越容易识别
 ```
