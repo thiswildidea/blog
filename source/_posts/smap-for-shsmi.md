@@ -59,6 +59,7 @@ tags:
       - [移除地图缩放范围限制](#移除地图缩放范围限制)
     - [添加图层](#添加图层)
        - [根据服务url添加图层](#根据服务url添加图层)
+       - [设置图层属性](#设置图层属性)
        - [根据图层id删除图层](#根据图层id删除图层)
     - [自定义地图控件主题](#自定义地图控件主题)
        - [自定义地图控件主题-暗色主题](#自定义地图控件主题-暗色主题)
@@ -401,6 +402,30 @@ const SceneLayerparam = {
                     }
              }
 this.map.addLayer(SceneLayerparam)
+```
+##### [设置图层属性]
+```js
+layerId          // 服务layerId
+layerTitle        // 服务title
+layerOpacity      // 服务opacity
+layerVisible      // 服务visible
+layerLabelsVisible // 服务labelsVisible 支持FeatureLayer
+layerLabelingInfo // 服务labelingInfo 支持FeatureLayer
+layerMaxScale     // 服务maxScale
+layerMinScale    // 服务minScale
+layerdefinitionExpression  //服务过滤条件
+layerelevationInfo // elevationInfo  支持FeatureLayer SceneLayer GraphicsLayer
+layerPopupEnabled // 服务popupEnabled 支持FeatureLayer SceneLayer GraphicsLayer
+layerPopupTemplate// 服务popupTemplate 支持FeatureLayer SceneLayer GraphicsLayer
+layerRenderer     // 服务renderer
+layerSublayers   // sublayers  支持支持MapImageLayer 
+```
+```js
+const Layerpasrams = {
+              layerLayerId: "LBJZ_ORIGIN",
+              layerVisible:false
+             }
+this.map.setLayerProperties(Layerpasrams)  //修改图层LBJZ_ORIGIN的可见性为false
 ```
 ##### [根据图层id删除图层]
 ```js
