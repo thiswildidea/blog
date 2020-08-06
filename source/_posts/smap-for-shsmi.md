@@ -377,6 +377,7 @@ layerLabelsVisible // 服务labelsVisible 支持FeatureLayer
 layerLabelingInfo // 服务labelingInfo 支持FeatureLayer
 layerMaxScale     // 服务maxScale
 layerMinScale    // 服务minScale
+layerdefinitionExpression //服务definitionExpression
 layerelevationInfo // elevationInfo  支持FeatureLayer SceneLayer GraphicsLayer
 layerPopupEnabled // 服务popupEnabled 支持FeatureLayer SceneLayer GraphicsLayer
 layerPopupTemplate// 服务popupTemplate 支持FeatureLayer SceneLayer GraphicsLayer
