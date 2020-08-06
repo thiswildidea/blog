@@ -16,3 +16,6 @@ hexo new post "light ring for smap new"
 hexo new post "heatmap for smap"
 
 hexo new post "falsh3d for smap"
+
+
+hexo new draft "light ring for smap"

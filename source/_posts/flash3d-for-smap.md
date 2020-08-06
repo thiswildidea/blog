@@ -9,6 +9,21 @@ tags:
 - smap
 ---
 flash3d for smap-shsmi
+
+
+## 引用方式
+npm
+```js
+import SMap from 'smap-shsmi' // 引用SMAP
+import Plugins from 'smap-plugins-shsmi' // 引用Plugins
+```
+普通js
+```js
+ <script src="http://10.108.3.16/smiapi/smap/SMap.min.js"></script>
+ <script src="http://10.108.3.16/smiapi/smap/Plugins.min.js"></script>
+```
+
+
 ## 目录
 - [FlashPoint3DLayer参数说明](#FlashPoint3DLayer参数说明)
 - [FlashPoint3DLayer调用示例](#FlashPoint3DLayer调用示例)

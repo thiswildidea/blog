@@ -10,7 +10,20 @@ tags:
 - smap
 ---
 
+# 说明
 根据筛选条件及相关设置参数为指定上海区县、街道、居委设置渐变光圈
+## 引用方式
+npm
+```js
+import SMap from 'smap-shsmi' // 引用SMAP
+import Plugins from 'smap-plugins-shsmi' // 引用Plugins
+```
+普通js
+```js
+ <script src="http://10.108.3.16/smiapi/smap/SMap.min.js"></script>
+ <script src="http://10.108.3.16/smiapi/smap/Plugins.min.js"></script>
+```
+
 ## 目录
 - [调用参数说明](#调用参数说明)
 - [二维区县光圈](#二维区县光圈)

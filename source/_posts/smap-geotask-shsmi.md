@@ -15,6 +15,18 @@ tags:
 ## 注意事项
 由于smap-geotask-shsmi 属于smap-shsmi或者smap-shsmi-aa扩展模块,再使用过程中需要先引用smap-shsmi或者smap-shsmi-aa。
 
+## 引用方式
+npm
+```js
+import SMap from 'smap-shsmi' // 引用SMAP
+import Plugins from 'smap-geotask-shsmi' // 引用Plugins
+```
+普通js
+```js
+ <script src="http://10.108.3.16/smiapi/smap/SMap.min.js"></script>
+ <script src="http://10.108.3.16/smiapi/smap/GeoTask.min.js"></script>
+```
+
 ## 目录
 - [图层查询](#图层查询)
    - [featureLayer](#featureLayer)
@@ -54,6 +66,7 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
 ```js
   const param = {
       layerUniqueId: 'qx_boundary',             //要查的图层ID 若地图没有加载该图层可以根据queryUrl 传入可访问查询图层ur
+       url:'http://10.108.3.16/arcgis/rest/services/boundary/sh_qx_boundary/FeatureServer',
       queryDefinition: "name like '%黄浦%'",   // qxcode like '%01%    //查询条件类似sql语句
       displayed: false,                        //查询结果是否在地图上显示
       outFields: ['*'],                       //查询属性字段定义* 为所有字段
@@ -87,12 +100,12 @@ flayerqueryTask.show() //显示已查询绘制在地图上的显示结果
 #### 图层查询(featurelayer)参数说明
 ```js
  layerUniqueId        //要查的图层ID 若地图没有加载该图层可以根据queryUrl 传入可访问查询图层ur
+  url                   //查询的图层url地址，如果图层加载到地图中，传入图层layerUniqueId 即可，若地图没有加载该图层到地图，可传入该图层服务Url地址
  type                 //查询要素类型 分 polygon、polyline、point 三种类型
  queryDefinition     //查询条件类似sql语句
  displayed          //查询结果是否在地图上显示
  symbol           //地图上显示的渲染符号，可根据type类型，设置polygon、polyline、point 三种类型样式及扩展类型样式
- outFields       // 要返回的属性字段，*为所有字段，可按实际图层字段定义
- queryUrl       //查询的图层url地址，如果图层加载到地图中，传入图层layerUniqueId 即可，若地图没有加载该图层到地图，可传入该图层服务Url地址
+ outFields       // 要返回的属性字段，*为所有字段，可按实际图层字段定义  
 ```
 ### mapImageLayer
 #### 图层查询(mapImageLayer)调用
@@ -112,7 +125,8 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
 ```js
   const param = {
       layerUniqueId: 'qx_boundary',         //要查的图层ID 若地图没有加载该图层可以根据queryUrl 传入可访问查询图层ur
-      layerId：0，                          //服务图层中要被查的id
+      url:'http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/MapServer',  //要查的图层url 若地图没有加载该图层可以根据url传入可访问查询图层ur
+      layerId:0，                          //服务图层中要被查的id
       queryDefinition: "name like '%黄浦%'", // qxcode like '%01%    //查询条件类似sql语句
       displayed: false,                    //查询结果是否在地图上显示
       outFields: ['*'],                   //要返回的属性字段，*为所有字段，可按实际图层字段定义
@@ -146,13 +160,14 @@ mlayerqueryTask.show()  //显示已查询绘制在地图上的显示结果
 #### 图层查询(mapImageLayer)参数说明
 ```js
  layerUniqueId           //要查的图层ID 若地图没有加载该图层可以根据queryUrl 传入可访问查询图层ur
+ url                   //查询的图层url 地址，如果图层加载到地图中，传入layerUniqueId 即可，若地图没有加载该图层到地图，可传入该图层服务Url地址
  layerId                //要查的图层类型为MapImageLayer的子图层id
  type                  //查询要素类型 分 polygon、polyline、point 三种类型
  queryDefinition      //查询条件类似sql语句
  displayed           //查询结果是否在地图上显示
  symbol             //地图上显示的渲染符号，可根据type类型，设置polygon、polyline、point 三种类型样式及扩展类型样式
  outFields       // 要返回的属性字段，*为所有字段都返回，可按实际图层字段定义
- queryUrl        //查询的图层url 地址，如果图层加载到地图中，传入layerUniqueId 即可，若地图没有加载该图层到地图，可传入该图层服务Url地址
+
 ```
 ### identify
 #### 图层查询identify调用
@@ -180,6 +195,7 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
 //点击地图查询指定图层内容
  smap.on(SMap.MapEvent.click, function(view, eventParamter) {
      const param = {
+         layerUniqueId:'XH_JD_V2',
          url:"http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
          displayed: true, //查询接口是否在地图上显示
          layerIds:[0],

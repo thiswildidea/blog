@@ -10,6 +10,20 @@ tags:
 - smap
 ---
 heatmap for smap-shsmi
+
+## 引用方式
+npm
+```js
+import SMap from 'smap-shsmi' // 引用SMAP
+import Plugins from 'smap-plugins-shsmi' // 引用Plugins
+```
+普通js
+```js
+ <script src="http://10.108.3.16/smiapi/smap/SMap.min.js"></script>
+ <script src="http://10.108.3.16/smiapi/smap/Plugins.min.js"></script>
+```
+
+
 ## 目录
 - [热力图调用参数说明](#热力图调用参数说明)
 - [添加热力图](#添加热力图)

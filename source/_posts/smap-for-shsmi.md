@@ -370,7 +370,7 @@ layerType         // 图层类型 MapImageLayer SceneLayer FeatureLayer TileLaye
 layerUrl          // 服务URl
 isToken           // 服务isToken
 layerTitle        // 服务title
-layerLayerId      // 服务LayerId
+layerId          // 服务layerId
 layerOpacity      // 服务opacity
 layerVisible      // 服务visible
 layerLabelsVisible // 服务labelsVisible 支持FeatureLayer
