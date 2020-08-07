@@ -70,6 +70,21 @@ import Plugins from 'smap-plugins-shsmi' // 引用Plugins
    - [光圈和遮盖层隐藏](#光圈和遮盖层隐藏)
    - [光圈和遮盖层显示](#光圈和遮盖层显示)
    - [光圈和遮盖层移除](#光圈和遮盖层移除)
+  - [热力图](#热力图)
+   - [热力图调用示例](#热力图调用示例)
+     - [添加热力图](#添加热力图)
+     - [更新热力图](#更新热力图)
+     - [隐藏热力图](#隐藏热力图)
+     - [显示热力图](#显示热力图)
+     - [显示热力图](#移除热力图)
+   - [热力图参数说明](#热力图参数说明)
+  - [FlashPoint3DLayer](#FlashPoint3DLayer)
+    - [FlashPoint3DLayer调用示例](#FlashPoint3DLayer调用示例)
+    - [FlashPoint3DLayer-click事件](#FlashPoint3DLayer-click事件)
+    - [FlashPoint3DLayer-pointermove事件](#FlashPoint3DLayer-pointermove事件)
+    - [FlashPoint3DLayer参数说明](#FlashPoint3DLayer参数说明)
+
+   
 ## 轨迹播放
 ### 轨迹播放调用示例
 #### 三维轨迹播放
@@ -821,8 +836,15 @@ import Plugins from 'smap-plugins-shsmi' // 引用Plugins
           }
         }
       }
-      const Boundary = new Plugins.Boundary(map.view)
+     const Boundary = new Plugins.Boundary(map.view)
       const Boundary.add(par)
+      Boundary.on(SMap.MapEvent.click, function(result, geometry) {
+       console.log(result,geometry)
+     })
+
+      Boundary.on(SMap.MapEvent.pointermove, function(result, geometry) {
+       console.log(result,geometry)
+     })
 ```
 ![区县边界](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/boundary/qx.png)
 #### 街道边界设置
@@ -853,8 +875,15 @@ import Plugins from 'smap-plugins-shsmi' // 引用Plugins
           }
         }
       }
-      const Boundary = new Plugins.Boundary(map.view)
+     const Boundary = new Plugins.Boundary(map.view)
       const Boundary.add(par)
+      Boundary.on(SMap.MapEvent.click, function(result, geometry) {
+       console.log(result,geometry)
+     })
+
+      Boundary.on(SMap.MapEvent.pointermove, function(result, geometry) {
+       console.log(result,geometry)
+     })
 ```
 ![街道边界](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/boundary/jd.png)
 #### 居委会边界设置
@@ -887,6 +916,13 @@ import Plugins from 'smap-plugins-shsmi' // 引用Plugins
       }
       const Boundary = new Plugins.Boundary(map.view)
       const Boundary.add(par)
+      Boundary.on(SMap.MapEvent.click, function(result, geometry) {
+       console.log(result,geometry)
+     })
+
+      Boundary.on(SMap.MapEvent.pointermove, function(result, geometry) {
+       console.log(result,geometry)
+     })
 ```
 ![居委会](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/boundary/jwh.png)
 #### 边界移除
@@ -1144,3 +1180,198 @@ import SMap from 'smap-shsmi'
  const  custommaskBoundary = new Plugins.MaskBoundary(map.view)
  custommaskBoundary.remove()
  ```
+## 热力图
+### 热力图调用示例
+#### 添加热力图
+```js
+import h337 from 'heatmapjs'  //heatmapjs
+import SMap from 'smap-shsmi' // 引用SMAP
+import Plugins from 'smap-plugins-shsmi' // 引用Plugins
+ const map = new SMap.Map('container', {
+        viewMode: '3D',
+        center: [0, 0],
+        zoom: 4,
+        zooms: [0, 12],
+        pitch: 60,
+        mapStyle: 'smap://styles/dark',
+        showBuildingBlock: true
+      })
+```
+```js
+const param = {
+        id: 'heatmap',
+        h337: h337,
+        container: 'container',
+        radius: 30,
+        maxOpacity: 0.8,
+        minOpacity: 0,
+        blur: 0.7,
+        gradient: {
+          0: 'rgb(0,0,0)',
+          0.3: 'rgb(0,0,255)',
+          0.8: 'rgb(0,255,0)',
+          0.98: 'rgb(255,255,0)',
+          1: 'rgb(255,0,0)'
+        },
+        datas: [
+          [-3020, -5200],
+          [-3020, -5200],
+          [-3120, -5200],
+          [-3120, -5100],
+          [-3220, -5200],
+          [-3220, -5200],
+          [-3220, -5200],
+          [-3120, -5200],
+          [-3220, -5200]
+        ]
+      }
+      const HeatMap = new Plugins.HeatMap(map.view)
+      HeatMap.add(param)
+```
+![热力图三维](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/3d/heatmap/heatmap.png)
+![热力图二维](https://gitee.com/thiswildidea/images/raw/master/smiapi/ts/4x/2d/heatmap/heatmap.png)
+#### 更新热力图
+```js
+ const updatedatas = [
+        [-3020, -6200, 500],
+        [-3120, -6200, 500],
+        [-3120, -6100, 500],
+        [-3220, -6200, 1000]
+      ]
+    HeatMap.refreshdata(updatedatas)
+```
+#### 隐藏热力图
+```js
+ HeatMap.hide()
+```
+#### 显示热力图
+```js
+HeatMap.show()
+```
+#### 移除热力图
+```js
+HeatMap.remove('heatmap')    
+```
+###  热力图参数说明
+```js
+    id            // 热力图对应id  
+    h337         // heatmapjs 中
+    container    //map div id 
+    radius      //半径
+    maxOpacity  //最大透明度
+    minOpacity  //最小透明度
+    blur       //模糊大小
+    gradient   // 渐变值
+    datas     //数据
+```
+##  FlashPoint3DLayer
+### FlashPoint3DLayer调用示例
+```js
+import SMap from 'smap-shsmi' // 引用SMAP
+import Plugins from 'smap-plugins-shsmi' // 引用Plugins
+ const map = new SMap.Map('container', {
+        viewMode: '3D',
+        center: [0, 0],
+        zoom: 4,
+        zooms: [0, 12],
+        pitch: 60,
+        mapStyle: 'smap://styles/dark',
+        showBuildingBlock: true
+      })
+```
+```js
+  const samples = [{
+        x: 0,
+        y: 0,
+        attributes: {
+          name: '报警点1',
+          address: '国际饭店'
+        }
+      },
+      {
+        x: 100,
+        y: 100,
+        attributes: {
+          name: '报警点2',
+          address: '人民广场附近1'
+        }
+      },
+      {
+        x: 150,
+        y: 100,
+        attributes: {
+          name: '报警点3',
+          address: '人民广场附近2'
+        }
+      }
+      ]
+      const param = {
+        color: [255, 0, 0, 1],
+        nring: 0.1,
+        spead: 1.0,
+        view: this.map.view,
+        points: samples
+      }
+
+      const fashPoint3DLayer = new Plugins.FlashPoint3DLayer(this.map.view)
+      fashPoint3DLayer.add(param)
+      fashPoint3DLayer.on('click', function(result, geometry) {
+        if (geometry) {
+          map.view.popup.defaultPopupTemplateEnabled = true
+          map.view.popup.autoOpenEnabled = false
+          _map.view.popup.open({
+            location: geometry,
+            title: result.attributes.name,
+            content: mapsenceViewPopup.createContentpopup(result.attributes)
+          })
+        }
+      })
+
+    createContentpopup(data) {
+    let htmlstring = '';
+    htmlstring += "<table>"
+    for (let key in data) {
+           htmlstring += "<tr>";
+           htmlstring += '<td';
+           htmlstring += "<span>";
+           htmlstring += key;
+           htmlstring += " :";
+           htmlstring += "</span>";
+           htmlstring += "</td>";
+           htmlstring += '<td';
+           htmlstring += "<span>";
+           htmlstring += data[key] != null ? data[key] : "";
+           htmlstring += "</span>";
+           htmlstring += "</td>";
+           htmlstring += "</tr>";
+    }
+    htmlstring += "</table>"
+  }
+```
+![三维闪烁](https://gitee.com/thiswildidea/images/blob/master/smiapi/ts/4x/3d/flash3d/falsh3d.gif)
+![三维闪烁](https://gitee.com/thiswildidea/images/blob/master/smiapi/ts/4x/3d/flash3d/falsh3d-newsymbol.gif)
+### FlashPoint3DLayer-click事件
+```js
+ const fashPoint3DLayer = new Plugins.FlashPoint3DLayer(this.map.view)
+  fashPoint3DLayer.on(SMap.MapEvent.click, function(result, geometry) {
+     // result 返回结果
+     //geometry 返回的点击位置
+  })
+```
+
+### FlashPoint3DLayer-pointermove事件
+```js
+ const fashPoint3DLayer = new Plugins.FlashPoint3DLayer(this.map.view)
+  fashPoint3DLayer.on(SMap.MapEvent.pointermove, function(result, geometry) {
+     // result 返回结果
+     //geometry 返回移动位置
+  })
+```
+### FlashPoint3DLayer参数说明
+```js
+    color //颜色
+    nring //光圈数量
+    spead //闪烁速度
+    view //地图试图
+    point //数据 由坐标和属性构成
+```

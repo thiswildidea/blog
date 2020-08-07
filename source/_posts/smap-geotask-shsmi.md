@@ -34,19 +34,23 @@ import Plugins from 'smap-geotask-shsmi' // 引用Plugins
       - [(featureLayer)查询结果地图地图移除](#(featureLayer)查询结果地图地图移除)
       - [(featureLayer)查询结果地图地图隐藏](#(featureLayer)查询结果地图地图隐藏)
       - [(featureLayer)查询结果地图地图显示](#(featureLayer)查询结果地图地图显示)
+      - [(featureLayer)查询结果事件](#(featureLayer)查询结果事件)
       - [图层查询(featureLayer)参数说明](#图层查询(featureLayer)参数说明)
    - [mapImageLayer](#mapImageLayer)
       - [图层查询(mapImageLayer调用)](#图层查询(mapImageLayer)调用)
       - [(mapImageLayer)查询结果地图地图移除](#(featureLayer)查询结果地图地图移除)
       - [(mapImageLayer)查询结果地图地图隐藏](#(featureLayer)查询结果地图地图隐藏)
       - [(mapImageLayer)查询结果地图地图显示](#(mapImageLayer)查询结果地图地图显示)
+      - [(mapImageLayer)查询结果事件](#(mapImageLayer)查询结果事件)
       - [图层查询(mapImageLayer)参数说明](#图层查询(mapImageLayer)参数说明)
    - [identify](#identify)
       - [图层identify调用](#图层查询identify调用)
-      - [图层identify调用结果地图隐藏](#图层identify调用结果地图隐藏)
-      - [图层identify调用结果地图显示](#图层identify调用结果地图显示)
-      - [图层identify调用结果地图移除](#图层identify调用结果地图移除)
-      - [图层identify调用参数说明](#图层identify调用参数说明)
+      - [图层identify识别结果地图隐藏](#图层identify识别结果地图隐藏)
+      - [图层identify识别结果地图显示](#图层identify识别结果地图显示)
+      - [图层identify识别结果地图移除](#图层identify识别结果地图移除)
+      - [图层identify识别结果事件](#图层identify识别结果事件)
+      - [图层identify识别参数说明](#图层identify识别参数说明)
+### featureLayer
 ## 图层查询
 ### featureLayer
 #### 图层查询(featurelayer)调用
@@ -96,6 +100,29 @@ flayerqueryTask.hide()  //隐藏已查询绘制在地图上的显示结果
 #### (featureLayer)查询结果地图地图显示
 ```js
 flayerqueryTask.show() //显示已查询绘制在地图上的显示结果
+```
+#### (featureLayer)查询结果事件
+```js
+const  flayerqueryTask = new GeoTask.Query(map.view)
+flqueryTask.on(SMap.MapEvent.click, function(result, geometry) {
+
+})
+
+flqueryTask.on(SMap.MapEvent.pointermove, function(result, geometry) {
+
+})
+
+flqueryTask.on(SMap.MapEvent.pointerenter, function(result, geometry) {
+
+})
+
+flqueryTask.on(SMap.MapEvent.pointerleave, function(result, geometry) {
+
+})
+
+flqueryTask.on(SMap.MapEvent.doubleclick, function(result, geometry) {
+
+})
 ```
 #### 图层查询(featurelayer)参数说明
 ```js
@@ -157,6 +184,29 @@ mlayerqueryTask.hide()  //隐藏已查询绘制在地图上的显示结果
 ```js
 mlayerqueryTask.show()  //显示已查询绘制在地图上的显示结果
 ```
+#### (mapImageLayer)查询结果事件
+```js
+const  flayerqueryTask = new GeoTask.Query(map.view)
+mlayerqueryTask.on(SMap.MapEvent.click, function(result, geometry) {
+
+})
+
+mlayerqueryTask.on(SMap.MapEvent.pointermove, function(result, geometry) {
+
+})
+
+mlayerqueryTask.on(SMap.MapEvent.pointerenter, function(result, geometry) {
+
+})
+
+mlayerqueryTask.on(SMap.MapEvent.pointerleave, function(result, geometry) {
+
+})
+
+mlayerqueryTask.on(SMap.MapEvent.doubleclick, function(result, geometry) {
+
+})
+```
 #### 图层查询(mapImageLayer)参数说明
 ```js
  layerUniqueId           //要查的图层ID 若地图没有加载该图层可以根据queryUrl 传入可访问查询图层ur
@@ -207,19 +257,42 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
      })
  })
 ```
-#### 图层identify调用结果地图隐藏
+#### 图层identify识别结果地图隐藏
 ```js
 identifytask.hide()
 ```
-#### 图层identify调用结果地图显示
+#### 图层identify识别结果地图显示
 ```js
 identifytask.show()
 ```
-#### 图层identify调用结果地图移除
+#### 图层identify识别结果地图移除
 ```js
 identifytask.remove()
 ```
-#### 图层identify调用参数说明
+#### 图层identify识别结果事件
+```js
+const  identifytask = new GeoTask.Query(map.view)
+identifytask.on(SMap.MapEvent.click, function(result, geometry) {
+
+})
+
+identifytask.on(SMap.MapEvent.pointermove, function(result, geometry) {
+
+})
+
+identifytask.on(SMap.MapEvent.pointerenter, function(result, geometry) {
+
+})
+
+identifytask.on(SMap.MapEvent.pointerleave, function(result, geometry) {
+
+})
+
+identifytask.on(SMap.MapEvent.doubleclick, function(result, geometry) {
+
+})
+```
+#### 图层identify识别参数说明
 ```js
   layerUniqueId   // 服务id,当服务已经加载到地图了，使用id
   url         // 服务url,当地图没有加载到地图中，使用要identify的url
