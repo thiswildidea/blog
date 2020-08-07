@@ -57,6 +57,8 @@ tags:
       - [恢复地表模式](#恢复地表模式)
       - [添加地图缩放范围限制](#添加地图缩放范围限制)
       - [移除地图缩放范围限制](#移除地图缩放范围限制)
+      - [鼠标禁用](#禁用鼠标禁用)
+      - [3d模式下二三维视角切换](#3d模式下二三维视角切换)
     - [添加图层](#添加图层)
        - [根据服务url添加图层](#根据服务url添加图层)
        - [设置图层属性](#设置图层属性)
@@ -150,7 +152,7 @@ import SMap from 'smap-shsmi'
     zoom: 5,
     zooms: [1, 12],
     pitch: 60,
-    mapStyle: 'smap://styles/dark', // 'smap://styles/normal' 'smap://styles/image'
+    mapStyle: 'smap://styles/dark', // 'smap://styles/light' 'smap://styles/image'
     showBuildingBlock: true
   })
 ```
@@ -162,7 +164,7 @@ import SMap from 'smap-shsmi'
            center: [0, 0],
            zoom: 5,
            zooms: [1, 12],
-           mapStyle: 'smap://styles/dark', // 'smap://styles/normal' 'smap://styles/image'
+           mapStyle: 'smap://styles/dark', // 'smap://styles/light' 'smap://styles/image'
         })
 </script>
 ```
@@ -342,7 +344,7 @@ map.zoomOut()
 ```
 ##### [设置地图样式]
 ```js
-map.setMapStyle('smap://styles/normal')
+map.setMapStyle('smap://styles/light')
 ```
 ##### [获取地图样式]
 ```js
@@ -363,6 +365,14 @@ map.enableThroughGround(false)
 ##### [移除地图缩放范围限制]
 ```js
 map.removeExtentConstrain()
+```
+##### [鼠标禁用]
+```js
+map.enableMouseEvent(fasle)
+```
+##### [3d模式下二三维切换]
+```js
+map.switchMode('2d')   //map.switchMode('3d')
 ```
 #### [添加图层]
 ##### [根据服务url添加图层]
