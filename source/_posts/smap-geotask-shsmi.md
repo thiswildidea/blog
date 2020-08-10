@@ -31,18 +31,20 @@ import Plugins from 'smap-geotask-shsmi' // 引用Plugins
 - [图层查询](#图层查询)
    - [featureLayer](#featureLayer)
       - [图层查询(featureLayer)调用](#图层查询(featureLayer)调用)
-      - [(featureLayer)查询结果地图地图移除](#(featureLayer)查询结果地图地图移除)
       - [(featureLayer)查询结果地图地图隐藏](#(featureLayer)查询结果地图地图隐藏)
       - [(featureLayer)查询结果地图地图显示](#(featureLayer)查询结果地图地图显示)
+      - [(featureLayer)查询结果地图地图移除](#(featureLayer)查询结果地图地图移除)
       - [(featureLayer)查询结果事件](#(featureLayer)查询结果事件)
       - [图层查询(featureLayer)参数说明](#图层查询(featureLayer)参数说明)
+      - [图层查询(featureLayer)注意事项](#图层查询(featureLayer)注意事项)
    - [mapImageLayer](#mapImageLayer)
       - [图层查询(mapImageLayer调用)](#图层查询(mapImageLayer)调用)
-      - [(mapImageLayer)查询结果地图地图移除](#(featureLayer)查询结果地图地图移除)
       - [(mapImageLayer)查询结果地图地图隐藏](#(featureLayer)查询结果地图地图隐藏)
       - [(mapImageLayer)查询结果地图地图显示](#(mapImageLayer)查询结果地图地图显示)
+      - [(mapImageLayer)查询结果地图地图移除](#(featureLayer)查询结果地图地图移除)
       - [(mapImageLayer)查询结果事件](#(mapImageLayer)查询结果事件)
       - [图层查询(mapImageLayer)参数说明](#图层查询(mapImageLayer)参数说明)
+      - [图层查询(mapImageLayer)注意事项](#图层查询(mapImageLayer)注意事项)
    - [identify](#identify)
       - [图层identify调用](#图层查询identify调用)
       - [图层identify识别结果地图隐藏](#图层identify识别结果地图隐藏)
@@ -50,6 +52,7 @@ import Plugins from 'smap-geotask-shsmi' // 引用Plugins
       - [图层identify识别结果地图移除](#图层identify识别结果地图移除)
       - [图层identify识别结果事件](#图层identify识别结果事件)
       - [图层identify识别参数说明](#图层identify识别参数说明)
+      - [图层identiy注意事项](#图层identiy注意事项)
 ### featureLayer
 ## 图层查询
 ### featureLayer
@@ -73,7 +76,7 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
        url:'http://10.108.3.16/arcgis/rest/services/boundary/sh_qx_boundary/FeatureServer',
       queryDefinition: "name like '%黄浦%'",   // qxcode like '%01%    //查询条件类似sql语句
       displayed: false,                        //查询结果是否在地图上显示
-      outFields: ['*'],                       //查询属性字段定义* 为所有字段
+      outFields: ['*'],                       //查询属性字段定义,*为所有字段
       type: 'polygon',                       //查询图层类型可根据type类型，设置polygon、polyline、point 三种类型样式及扩展类型样式
       symbol: {                             // 地图上显示的渲染符号，可根据type类型，设置polygon、polyline、point 三种类型样式及扩展类型样式
         type: 'simple-fill',
@@ -89,10 +92,7 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
         console.log(result)
   })
 ```
-#### (featureLayer)查询结果地图地图移除
-```js
-flayerqueryTask.remove() //移除已查询绘制在地图上的显示结果
-```
+
 #### (featureLayer)查询结果地图地图隐藏
 ```js
 flayerqueryTask.hide()  //隐藏已查询绘制在地图上的显示结果
@@ -100,6 +100,10 @@ flayerqueryTask.hide()  //隐藏已查询绘制在地图上的显示结果
 #### (featureLayer)查询结果地图地图显示
 ```js
 flayerqueryTask.show() //显示已查询绘制在地图上的显示结果
+```
+#### (featureLayer)查询结果地图地图移除
+```js
+flayerqueryTask.remove() //移除已查询绘制在地图上的显示结果
 ```
 #### (featureLayer)查询结果事件
 ```js
@@ -134,6 +138,10 @@ flqueryTask.on(SMap.MapEvent.doubleclick, function(result, geometry) {
  symbol           //地图上显示的渲染符号，可根据type类型，设置polygon、polyline、point 三种类型样式及扩展类型样式
  outFields       // 要返回的属性字段，*为所有字段，可按实际图层字段定义  
 ```
+#### 图层查询(featureLayer)注意事项
+```js
+GeoTask.Query 对象和对应地图显示结果层对应，多次实例化时候要分别处理GeoTask.Query 示例对象的show()、hide()、remove()。
+```
 ### mapImageLayer
 #### 图层查询(mapImageLayer)调用
 ```js
@@ -153,7 +161,7 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
   const param = {
       layerUniqueId: 'qx_boundary',         //要查的图层ID 若地图没有加载该图层可以根据queryUrl 传入可访问查询图层ur
       url:'http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/MapServer',  //要查的图层url 若地图没有加载该图层可以根据url传入可访问查询图层ur
-      layerId:0，                          //服务图层中要被查的id
+      layerId:0，     //MapServer 需要指定子图层  //服务图层中要被查的id
       queryDefinition: "name like '%黄浦%'", // qxcode like '%01%    //查询条件类似sql语句
       displayed: false,                    //查询结果是否在地图上显示
       outFields: ['*'],                   //要返回的属性字段，*为所有字段，可按实际图层字段定义
@@ -172,10 +180,6 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
         console.log(result)
   })
 ```
-#### (mapImageLayer)查询结果地图地图移除
-```js
-mlayerqueryTask.remove()  //移除已查询绘制在地图上的显示结果
-```
 #### (mapImageLayer)查询结果地图地图隐藏
 ```js
 mlayerqueryTask.hide()  //隐藏已查询绘制在地图上的显示结果
@@ -183,6 +187,10 @@ mlayerqueryTask.hide()  //隐藏已查询绘制在地图上的显示结果
 #### (mapImageLayer)查询结果地图地图显示
 ```js
 mlayerqueryTask.show()  //显示已查询绘制在地图上的显示结果
+```
+#### (mapImageLayer)查询结果地图地图移除
+```js
+mlayerqueryTask.remove()  //移除已查询绘制在地图上的显示结果
 ```
 #### (mapImageLayer)查询结果事件
 ```js
@@ -219,6 +227,10 @@ mlayerqueryTask.on(SMap.MapEvent.doubleclick, function(result, geometry) {
  outFields       // 要返回的属性字段，*为所有字段都返回，可按实际图层字段定义
 
 ```
+#### 图层查询(mapImageLayer)注意事项
+```js
+GeoTask.Query 对象和对应地图显示结果层对应，多次实例化时候要分别处理GeoTask.Query 示例对象的show()、hide()、remove()。
+```
 ### identify
 #### 图层查询identify调用
 ```js
@@ -243,18 +255,30 @@ import GeoTask from 'smap-geotask-shsmi' // 引用GeoTask
 ```
 ```js
 //点击地图查询指定图层内容
- smap.on(SMap.MapEvent.click, function(view, eventParamter) {
-     const param = {
+    // MapImageLayer
+    const param = {
          layerUniqueId:'XH_JD_V2',
          url:"http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
          displayed: true, //查询接口是否在地图上显示
-         layerIds:[0],
+         layerIds:[0],  //需要指定子图层
          tolerance:1,
          geometry:eventParamter.mapPoint
-     }
-     identifytask.MapService(param).then((result) => {
+     } 
+    identifytask.MapService(param).then((result) => {
        console.log(result)
      })
+
+     // 或者 FeatureServer
+           const param = {
+              layerUniqueId:'XH_JD_V2',
+              url:"http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
+              displayed: true, //查询接口是否在地图上显示
+              geometry:eventParamter.mapPoint
+          }
+     identifytask.FeatureService(param).then((result) => {
+       console.log(result)
+     })
+
  })
 ```
 #### 图层identify识别结果地图隐藏
@@ -300,4 +324,8 @@ identifytask.on(SMap.MapEvent.doubleclick, function(result, geometry) {
   geometry   //点击位置
   displayed  //点击识别内容是否在地图上显示
   tolerance  // 容差，值越大越容易识别
+```
+#### 图层identiy注意事项
+```js
+GeoTask.Identify 对象和对应地图显示结果层对应，多次实例化时候要分别处理GeoTask.Identify 示例对象的show()、hide()、remove()。
 ```
