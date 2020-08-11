@@ -81,6 +81,7 @@ import Plugins from 'smap-plugins-shsmi' // 引用Plugins
         color: [255, 0, 0, 1],
         nring: 0.1,
         spead: 1.0,
+        size: 15,
         view: this.map.view,
         points: samples
       }
