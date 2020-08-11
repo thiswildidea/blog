@@ -30,9 +30,10 @@ symbol  for  smap
     - [TextSymbol(2/3d)](#TextSymbol(2/3d))
     - [TextSymbol3DLayer](#TextSymbol3DLayer(3d))
 - [WaterSymbol3DLayer](#WaterSymbol3DLayer)
-- [renderer]](#renderer)
-   - [Simplerenderer]](#Simplerenderer)
-   - [unique-valuerenderer]](#unique-valuerenderer)
+- [labelinfo](#labelinfo)
+- [renderer](#renderer)
+   - [Simplerenderer](#Simplerenderer)
+   - [unique-valuerenderer](#unique-valuerenderer)
 ### MarkSymbol
 ####  SimpleMarkerSymbol(2d/3d)
 ```js
@@ -360,6 +361,36 @@ var textSymbol = {
            size: 2
        }
     }]
+ }
+```
+```js
+带有LineCallout3D
+ const symbol= {
+    type: "label-3d",  // autocasts as new LabelSymbol3D()
+    symbolLayers: [{
+      type: "text",  // autocasts as new TextSymbol3DLayer()
+      material: { color: [ 49,163,84 ] },
+      size: 12,  // points
+      font:16,
+      halo : {
+           color: [255, 255, 255, 0.8], // autocasts as Color
+           size: 2
+       }
+    }]
+     verticalOffset: {
+      screenLength: 150,
+      maxWorldLength: 200,
+      minWorldLength: 20
+    },
+    callout: {
+      type: 'line',
+      color: [50, 50, 50],
+      size: 2,
+      border: {
+        color: [50, 50, 50]
+      }
+    }
+ }
 ```
 ### WaterSymbol3DLayer
 ```js
@@ -367,15 +398,86 @@ const symbol ={
       type: "polygon-3d",
       symbolLayers: [{
         type: "water",
-        waveDirection: 180,
+        waveDirection: 180, 
         color: "#5975a3",
-        waveStrength: "moderate",
-        waterbodySize: "small"
+        waveStrength: "moderate", // Possible Values:"calm"|"rippled"|"slight"|"moderate"
+        waterbodySize: "small"  // Possible Values:"small"|"medium"|"large"
       }]
 }
 ```
+### labelinfo
+```js
+ const  labelingInfo = [
+      {
+        labelExpressionInfo: {
+          value: '{CNAME}' //标注字段 或者表达式
+        },
+        symbol: {
+          type: 'label-3d',
+          symbolLayers: [
+            {
+              type: 'text',
+              material: {
+                color: 'white'
+              },
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 18
+            }
+          ]
+        },
+        labelPlacement: 'above-center',
+        maxScale: 0,
+        minScale: 850000
+      }
+    ]
+```
+```js
+带有LineCallout3D
+ const  labelingInfo = [
+      {
+        labelExpressionInfo: {
+          value: '{CNAME}' //标注字段 或者表达式
+        },
+        symbol: {
+          type: 'label-3d',
+          symbolLayers: [
+            {
+              type: 'text',
+              material: {
+                color: 'white'
+              },
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 18
+            }
+          ],
+          verticalOffset: {
+            screenLength: 150,
+            maxWorldLength: 200,
+            minWorldLength: 20
+          },
+          callout: {
+            type: 'line',
+            color: [50, 50, 50],
+            size: 2,
+            border: {
+              color: [50, 50, 50]
+            }
+          }
+        },
+        labelPlacement: 'above-center',
+        maxScale: 0,
+        minScale: 850000
+      }
+    ]
+```
 ### renderer
-####  Simplerenderer
+#### Simplerenderer
  Simplerenderer渲染type为simple, symbol 可按点、线、面二三维场景按需进行符号选择。
  ```js
  //for simple-marker 
@@ -418,7 +520,7 @@ const symbol ={
     }
   }
  ```
-####  unique-valuerenderer
+#### unique-valuerenderer
 Simplerenderer渲染type为unique-value, symbol可按点、线、面二三维场景按需进行符号选择，可根据字段值分类进行符号定义。
  ```js
   const  renderer={
